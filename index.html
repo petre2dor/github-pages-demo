@@ -242,7 +242,7 @@
 <body>
     <div class="container">
         <header>
-            <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-image" id="profileImg">
+            <img src="https://via.placeholder.com/150" alt="John Doe profile picture" class="profile-image" id="profileImg">
             <h1>John Doe</h1>
             <p class="tagline">Developer | Designer | Creator</p>
         </header>
@@ -329,10 +329,10 @@
         <footer>
             <p>&copy; 2024 John Doe. Built with HTML, CSS & JavaScript.</p>
             <div class="social-links">
-                <a href="#" class="social-link" title="GitHub">🐙</a>
-                <a href="#" class="social-link" title="LinkedIn">💼</a>
-                <a href="#" class="social-link" title="Twitter">🐦</a>
-                <a href="#" class="social-link" title="Email">📧</a>
+                <a href="#" class="social-link" aria-label="GitHub profile">🐙</a>
+                <a href="#" class="social-link" aria-label="LinkedIn profile">💼</a>
+                <a href="#" class="social-link" aria-label="Twitter profile">🐦</a>
+                <a href="#" class="social-link" aria-label="Email contact">📧</a>
             </div>
         </footer>
     </div>
@@ -341,7 +341,7 @@
         // Profile image click interaction
         const profileImg = document.getElementById('profileImg');
         profileImg.addEventListener('click', function() {
-            this.style.transform = this.style.transform === 'rotate(360deg)' ? 'rotate(0deg)' : 'rotate(360deg)';
+            this.style.transform = this.style.transform.includes('rotate(360deg)') ? 'rotate(0deg)' : 'rotate(360deg)';
             this.style.transition = 'transform 1s ease';
         });
 
@@ -359,7 +359,7 @@
         hobbyCards.forEach(card => {
             card.addEventListener('click', function() {
                 const icon = this.querySelector('.hobby-icon');
-                icon.style.transform = icon.style.transform === 'scale(1.5)' ? 'scale(1)' : 'scale(1.5)';
+                icon.style.transform = icon.style.transform.includes('scale(1.5)') ? 'scale(1)' : 'scale(1.5)';
                 icon.style.transition = 'transform 0.3s ease';
             });
         });
